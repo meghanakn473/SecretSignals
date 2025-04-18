@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import WelcomePage from './WelcomePage';
+import HomePage from './HomePage';
+import AnonymousComplaintPage from './AnonymousComplaint';
+import NonAnonymousComplaintPage from './NonAnonymousComplaint';
+import ConfirmationPage from './ComplaintConfirmation';
+import CheckComplaintStatus from './checkstatus';
+import ChatPage from './ChatPage';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<WelcomePage />} />
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/file-anonymous-complaint" element={<AnonymousComplaintPage />} />
+        <Route path="/file-non-anonymous-complaint" element={<NonAnonymousComplaintPage />} />
+        <Route path="/confirmation" element={<ConfirmationPage />} />
+        <Route path="/check-complaint-status" element={<CheckComplaintStatus />} />
+        <Route path="/chat/:complaintId" element={<ChatPage />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
