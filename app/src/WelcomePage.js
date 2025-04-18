@@ -1,14 +1,14 @@
 import React from 'react';
-import { Shield, Search, FileText, BarChart3 } from 'lucide-react';
+import { Shield, UserPlus, Database, BarChart3 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const OfficialWelcomePage = () => {
+const WelcomePage = () => {
   const pageStyle = {
     minHeight: '100vh',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    background: 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)',
+    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
     padding: '20px',
   };
 
@@ -24,7 +24,7 @@ const OfficialWelcomePage = () => {
 
   const headerStyle = {
     textAlign: 'center',
-    color: '#0d47a1',
+    color: '#1a237e',
     fontSize: '2.5rem',
     fontWeight: 'bold',
     marginBottom: '10px',
@@ -32,7 +32,7 @@ const OfficialWelcomePage = () => {
 
   const subHeaderStyle = {
     textAlign: 'center',
-    color: '#1565c0',
+    color: '#3f51b5',
     fontSize: '1.2rem',
     marginBottom: '40px',
   };
@@ -57,18 +57,18 @@ const OfficialWelcomePage = () => {
 
   const iconStyle = {
     marginBottom: '15px',
-    color: '#1565c0',
+    color: '#3f51b5',
   };
 
   const featureTitleStyle = {
     fontSize: '1.2rem',
     fontWeight: 'bold',
-    color: '#0d47a1',
+    color: '#1a237e',
     marginBottom: '10px',
   };
 
   const featureDescStyle = {
-    color: '#37474f',
+    color: '#546e7a',
     fontSize: '0.9rem',
   };
 
@@ -77,7 +77,7 @@ const OfficialWelcomePage = () => {
     width: '200px',
     margin: '0 auto',
     padding: '12px 0',
-    backgroundColor: '#1565c0',
+    backgroundColor: '#3f51b5',
     color: 'white',
     textAlign: 'center',
     textDecoration: 'none',
@@ -85,7 +85,7 @@ const OfficialWelcomePage = () => {
     fontWeight: 'bold',
     fontSize: '1rem',
     transition: 'all 0.3s ease',
-    boxShadow: '0 5px 15px rgba(21, 101, 192, 0.4)',
+    boxShadow: '0 5px 15px rgba(63, 81, 181, 0.4)',
   };
 
   const handleMouseEnter = (e) => {
@@ -101,8 +101,8 @@ const OfficialWelcomePage = () => {
   return (
     <div style={pageStyle}>
       <div style={containerStyle}>
-        <h1 style={headerStyle}>Welcome to BlocktheCrime Official Portal</h1>
-        <p style={subHeaderStyle}>Empowering officials to investigate and resolve complaints efficiently</p>
+        <h1 style={headerStyle}>Welcome to BlocktheCrime</h1>
+        <p style={subHeaderStyle}>Empowering citizens to report crimes safely and anonymously</p>
         <div style={featureContainerStyle}>
           <div
             style={featureStyle}
@@ -110,26 +110,26 @@ const OfficialWelcomePage = () => {
             onMouseLeave={handleMouseLeave}
           >
             <Shield size={48} style={iconStyle} />
-            <h3 style={featureTitleStyle}>Secure Access</h3>
-            <p style={featureDescStyle}>Encrypted portal for authorized officials only</p>
+            <h3 style={featureTitleStyle}>Anonymous Reporting</h3>
+            <p style={featureDescStyle}>File cases without revealing your identity</p>
           </div>
           <div
             style={featureStyle}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            <Search size={48} style={iconStyle} />
-            <h3 style={featureTitleStyle}>Complaint Investigation</h3>
-            <p style={featureDescStyle}>Tools to thoroughly investigate reported cases</p>
+            <UserPlus size={48} style={iconStyle} />
+            <h3 style={featureTitleStyle}>Community Oversight</h3>
+            <p style={featureDescStyle}>Cases reviewed by multiple parties for fairness</p>
           </div>
           <div
             style={featureStyle}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            <FileText size={48} style={iconStyle} />
-            <h3 style={featureTitleStyle}>Case Management</h3>
-            <p style={featureDescStyle}>Efficient tracking and management of complaints</p>
+            <Database size={48} style={iconStyle} />
+            <h3 style={featureTitleStyle}>Blockchain Security</h3>
+            <p style={featureDescStyle}>Tamper-proof storage of complaints and evidence</p>
           </div>
           <div
             style={featureStyle}
@@ -137,14 +137,14 @@ const OfficialWelcomePage = () => {
             onMouseLeave={handleMouseLeave}
           >
             <BarChart3 size={48} style={iconStyle} />
-            <h3 style={featureTitleStyle}>Analytics Dashboard</h3>
-            <p style={featureDescStyle}>Insights and statistics for better decision-making</p>
+            <h3 style={featureTitleStyle}>Priority Handling</h3>
+            <p style={featureDescStyle}>Cases sorted by severity for efficient resolution</p>
           </div>
         </div>
-        <Link to="/login" style={buttonStyle}>Login</Link>
+        <Link to="/home" style={buttonStyle}>Get Started</Link>
       </div>
     </div>
   );
 };
 
-export default OfficialWelcomePage;
+export default WelcomePage;
